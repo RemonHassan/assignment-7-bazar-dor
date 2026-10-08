@@ -6,7 +6,7 @@ const Header = () => {
     dateStyle: "full",
   });
   return (
-    <header className="w-full bg-white shadow-sm border-b border-gray-100 px-6 py-4">
+    <header className="w-full bg-white border-b border-gray-100 px-6 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Left Section: Logo & Date */}
         <div className="flex items-center gap-4">

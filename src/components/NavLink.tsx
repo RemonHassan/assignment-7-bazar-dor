@@ -5,6 +5,7 @@ interface Category {
   slug: string;
   nameBn: string;
   icon: string;
+  category: string;
   scrapable?: boolean;
 }
 

@@ -1,6 +1,10 @@
 import Image from "next/image";
+import NavLink from "./NavLink";
 
 const Header = () => {
+  const date = new Date().toLocaleDateString("bn-BD", {
+    dateStyle: "full",
+  });
   return (
     <header className="w-full bg-white shadow-sm border-b border-gray-100 px-6 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -23,9 +27,7 @@ const Header = () => {
             >
               বাজার দর
             </a>
-            <p className="text-xs text-gray-500 font-normal mt-0.5">
-              মঙ্গলবার, ৬ অক্টোবর, ২০২৬
-            </p>
+            <p className="mt-1 text-[14px] text-gray-500">{date}</p>
           </div>
         </div>
 
@@ -40,6 +42,7 @@ const Header = () => {
           </button>
         </div>
       </div>
+      <NavLink></NavLink>
     </header>
   );
 };

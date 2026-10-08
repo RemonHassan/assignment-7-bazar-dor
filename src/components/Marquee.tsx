@@ -1,3 +1,4 @@
+import Link from "next/link";
 import MarqueeText from "react-marquee-text";
 import "react-marquee-text/dist/styles.css";
 interface Change {
@@ -30,20 +31,22 @@ const Marquee = async () => {
     <div>
       <MarqueeText className="py-2" direction="right" duration={15}>
         {products.map((h) => (
-          <span key={h.id}>
-            <span className="ml-5 ">
-              {h.categoryIcon}
-              {h.nameBn}
-            </span>
-            <span className="mx-1">{`${h.today}টাকা/${h.unit}`}</span>
+          <Link key={h.id} href={`/products/${h.id}`}>
             <span>
-              {h.change.dir === "up" ? (
-                <span className="text-red-600">▲{h.change.pct}</span>
-              ) : (
-                <span className="text-green-500">▼{h.change.pct}</span>
-              )}
+              <span className="ml-5 ">
+                {h.categoryIcon}
+                {h.nameBn}
+              </span>
+              <span className="mx-1">{`${h.today}টাকা/${h.unit}`}</span>
+              <span>
+                {h.change.dir === "up" ? (
+                  <span className="text-red-600">▲{h.change.pct}</span>
+                ) : (
+                  <span className="text-green-500">▼{h.change.pct}</span>
+                )}
+              </span>
             </span>
-          </span>
+          </Link>
         ))}
       </MarqueeText>
     </div>

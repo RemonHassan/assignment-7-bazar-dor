@@ -1,5 +1,6 @@
 import Image from "next/image";
 import NavLink from "./NavLink";
+import Link from "next/link";
 
 const Header = () => {
   const date = new Date().toLocaleDateString("bn-BD", {
@@ -21,12 +22,13 @@ const Header = () => {
           </div>
 
           <div className="flex flex-col">
-            <a
-              href="#"
+            <Link
               className="font-bold text-2xl text-emerald-800 leading-tight"
+              href={"/"}
             >
               বাজার দর
-            </a>
+            </Link>
+
             <p className="mt-1 text-[14px] text-gray-500">{date}</p>
           </div>
         </div>

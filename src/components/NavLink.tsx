@@ -9,14 +9,25 @@ interface Category {
 }
 
 const NavLinks = async () => {
-  const res = await fetch(
-    "https://api.api-store.workers.dev/api/bazardor/categories",
-  );
-  const data = await res.json();
-  const categories: Category[] = data;
+  let categories: Category[] = [];
+
+  try {
+    const res = await fetch(
+      "https://api.abcz.workers.dev/api/bazardor/categories",
+      { next: { revalidate: 3600 } },
+    );
+
+    if (res.ok) {
+      categories = await res.json();
+    } else {
+      console.warn(`Categories API returned status ${res.status}`);
+    }
+  } catch (error) {
+    console.error("Failed to fetch categories:", error);
+  }
 
   return (
-    <nav className="w-full bg-white  py-3">
+    <nav className="w-full bg-white py-3">
       <div className="max-w-7xl mx-auto px-4 flex gap-6 items-center justify-center overflow-x-auto">
         {categories.map((item) => (
           <Link

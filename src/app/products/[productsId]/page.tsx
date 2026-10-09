@@ -51,7 +51,8 @@ const DetailPage = async ({ params }: DetailPageProps) => {
 
   try {
     const res = await fetch(
-      `https://api.abcz.workers.dev/api/bazardor/products/${productsId}`,
+      `https://api.api-store.workers.dev/api/bazardor/products/${productsId}`,
+      // https://api.api-store.workers.dev/api/bazardor/products/1
       { next: { revalidate: 60 } },
     );
 

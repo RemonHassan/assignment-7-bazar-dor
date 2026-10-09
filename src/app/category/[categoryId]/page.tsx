@@ -12,7 +12,8 @@ const CategoryProducts = async ({ params }: CategoryProductsProps) => {
 
   try {
     const res = await fetch(
-      `https://api.abcz.workers.dev/api/bazardor/products?category=${categoryId}`,
+      `https://api.api-store.workers.dev/api/bazardor/products?category=${categoryId}`,
+      // https://api.api-store.workers.dev/api/bazardor/products?category=chal
       {
         next: { revalidate: 60 },
       },

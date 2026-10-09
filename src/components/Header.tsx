@@ -1,6 +1,7 @@
 import Image from "next/image";
 import NavLink from "./NavLink";
 import Link from "next/link";
+import UserInfo from "./UserInfo";
 
 const Header = () => {
   const date = new Date().toLocaleDateString("bn-BD", {
@@ -34,15 +35,7 @@ const Header = () => {
         </div>
 
         {/* Right Section: Sign In & Sign Up */}
-        <div className="flex items-center gap-3">
-          <button className="px-5 py-2.5 text-gray-800 hover:text-emerald-700 font-semibold text-base transition-colors duration-200">
-            সাইন ইন
-          </button>
-
-          <button className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-base rounded-xl shadow-xs transition-colors duration-200">
-            সাইন আপ
-          </button>
-        </div>
+        <UserInfo></UserInfo>
       </div>
       <NavLink></NavLink>
     </header>

@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import React from "react";
 
 interface Market {
@@ -77,11 +78,7 @@ const DetailPage = async ({ params }: DetailPageProps) => {
   }
 
   if (!product) {
-    return (
-      <div className="container mx-auto px-4 py-12 text-center text-gray-500 font-medium">
-        পণ্যটি পাওয়া যায়নি বা কোনো ত্রুটি ঘটেছে। (ID: {productsId})
-      </div>
-    );
+    notFound();
   }
 
   // Summary Calculations

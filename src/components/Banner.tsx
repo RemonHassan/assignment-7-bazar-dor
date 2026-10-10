@@ -27,9 +27,11 @@ export default function Banner() {
 
           {/* Qabduu (Button) */}
           <div className="pt-2">
-            <button className="bg-[#058c42] hover:bg-[#046e34] text-white font-medium text-base px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer">
-              সব পণ্য দেখুন
-            </button>
+            <a href="#সব-পণ্য">
+              <button className="bg-[#058c42] hover:bg-[#046e34] text-white font-medium text-base px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer">
+                সব পণ্য দেখুন
+              </button>
+            </a>
           </div>
         </div>
 

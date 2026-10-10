@@ -33,9 +33,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
   const changeColor =
     change.dir === "up"
-      ? "text-green-600 bg-green-50"
+      ? "text-red-500 bg-red-50"
       : change.dir === "down"
-        ? "text-red-500 bg-red-50"
+        ? " text-green-600 bg-green-50"
         : "text-gray-500 bg-gray-50";
 
   return (

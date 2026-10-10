@@ -29,11 +29,10 @@ const ProfilePage = () => {
     console.log("Updating profile with:", updatedData);
 
     try {
-      // Call Better Auth client to update user profile name
       await authClient.updateUser({
         name: updatedData.name as string,
       });
-      alert("প্রোফাইল আপডেট হয়েছে!");
+      toast.success("প্রোফাইল আপডেট হয়েছে!");
     } catch (error) {
       toast.error(`Update failed:${error}`);
     }

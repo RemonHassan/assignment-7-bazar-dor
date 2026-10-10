@@ -1,4 +1,6 @@
 import ProductList from "@/components/ProductList";
+import { notFound } from "next/navigation";
+import { toast } from "react-toastify";
 
 interface CategoryProductsProps {
   params: Promise<{
@@ -23,7 +25,10 @@ const CategoryProducts = async ({ params }: CategoryProductsProps) => {
       products = await res.json();
     }
   } catch (error) {
-    console.error("Failed to fetch category products:", error);
+    toast.error("Failed to fetch category products");
+  }
+  if (!products) {
+    notFound();
   }
 
   return (
